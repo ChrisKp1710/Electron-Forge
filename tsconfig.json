@@ -11,6 +11,7 @@
     "baseUrl": "./",
     "outDir": "build",
     "moduleResolution": "node",
+    "typeRoots": ["./node_modules/@types", "./custom.d.ts"],
     "resolveJsonModule": true,
     "paths": {
       "@components/*": ["src/components/*"],
