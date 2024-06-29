@@ -9,7 +9,7 @@
     "noImplicitAny": true,
     "sourceMap": true,
     "baseUrl": "./",
-    "outDir": "dist",
+    "outDir": "build",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "paths": {
@@ -17,5 +17,6 @@
       "@views/*": ["src/views/*"]
     }
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*"],
+  "exclude": ["build", "node_modules"]
 }
