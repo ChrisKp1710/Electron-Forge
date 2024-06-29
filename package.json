@@ -6,9 +6,10 @@
   "main": ".webpack/main",
   "scripts": {
     "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make",
-    "publish": "electron-forge publish",
+    "package": "npm run build && electron-forge package",
+    "make": "npm run build && electron-forge make",
+    "publish": "npm run build && electron-forge publish",
+    "build": "tsc -p .",
     "lint": "eslint --ext .ts,.tsx ."
   },
   "devDependencies": {
@@ -44,6 +45,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@types/react-router-dom": "^5.3.3",
     "electron-squirrel-startup": "^1.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

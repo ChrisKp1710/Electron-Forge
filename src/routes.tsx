@@ -9,11 +9,10 @@ const AppRoutes: React.FC = () => {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Redirect per percorsi non corrispondenti */}
-        <Route path="*" element={<Navigate to="/" />} />{" "}
         <Route path="/" element={<App />} />
         <Route path="/home" element={<Home />} />
         <Route path="/auth" element={<Auth />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>
   );
