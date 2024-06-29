@@ -27,7 +27,7 @@
  */
 
 import "./index.tsx";
-import "./styles/index.css";
+import "./styles/tailwind.css";
 
 console.log(
   '👋 This message is being logged by "renderer.ts", included via webpack'
