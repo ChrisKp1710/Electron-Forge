@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
+
 /* // src/database/database.ts
 import { app } from "electron";
 import sqlite3 from "sqlite3";
