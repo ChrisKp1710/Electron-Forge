@@ -18,6 +18,6 @@
       "@views/*": ["src/views/*"]
     }
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "typings.d.ts"],
   "exclude": ["build", "node_modules"]
 }

@@ -57,11 +57,12 @@ app.on("activate", () => {
   }
 });
  */
-import { app, BrowserWindow } from "electron";
-import { initDb } from "./database/initDatabase"; // Assicurati di avere il percorso corretto per il tuo file initDatabase.ts
+import { app, BrowserWindow, ipcMain } from "electron";
+import { initDb } from "./database/initDatabase"; 
 import path from "path";
 import { format } from "url";
 import chalk from "chalk";
+import { openDb } from "./database/database";
 
 declare const MAIN_WINDOW_WEBPACK_ENTRY: string;
 declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
@@ -103,8 +104,9 @@ app.on("window-all-closed", () => {
   }
 });
 
-app.on("activate", () => {
-  if (BrowserWindow.getAllWindows().length === 0) {
-    createWindow();
-  }
+ipcMain.handle('fetch-users', async () => {
+  const db = await openDb();
+  const users = await db.all('SELECT * FROM users');
+  return users;
 });
+
