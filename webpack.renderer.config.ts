@@ -2,14 +2,16 @@
 import type { Configuration } from "webpack";
 import { rules } from "./webpack.rules";
 import { plugins } from "./webpack.plugins";
+import path from "path";
+import { merge } from "webpack-merge";
 
 rules.push({
   test: /\.css$/,
   use: ["style-loader", "css-loader", "postcss-loader"],
 });
 
-export const rendererConfig: Configuration = {
-  entry: "./src/index.tsx", // Assicurati che punti a index.tsx
+const commonConfig: Configuration = {
+  entry: "./src/index.tsx",
   module: {
     rules,
   },
@@ -18,3 +20,21 @@ export const rendererConfig: Configuration = {
     extensions: [".js", ".ts", ".jsx", ".tsx", ".css"],
   },
 };
+
+const devConfig: Configuration = {
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "dist"),
+    },
+    compress: true,
+    port: 9000,
+    historyApiFallback: true,
+    hot: true,
+  },
+};
+
+const isProduction = process.env.NODE_ENV === "production";
+
+export const rendererConfig: Configuration = isProduction
+  ? commonConfig
+  : merge(commonConfig, devConfig);

@@ -1,17 +1,3 @@
-/* // src/components/Form/form.tsx
-import React from "react";
-
-const Form: React.FC = () => {
-  return (
-    <div>
-      <h1>Form</h1>
-    </div>
-  );
-};
-
-export default Form;
- */
-
 // src/components/Form/form.tsx
 import React from "react";
 import { Link } from "react-router-dom";

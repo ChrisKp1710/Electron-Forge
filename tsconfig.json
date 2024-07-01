@@ -10,13 +10,15 @@
     "sourceMap": true,
     "baseUrl": "./",
     "outDir": "build",
+    "rootDir": "src",
     "moduleResolution": "node",
+    "typeRoots": ["./node_modules/@types", "./custom.d.ts"],
     "resolveJsonModule": true,
     "paths": {
       "@components/*": ["src/components/*"],
       "@views/*": ["src/views/*"]
     }
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "typings.d.ts"],
   "exclude": ["build", "node_modules"]
 }

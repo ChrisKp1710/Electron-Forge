@@ -10,6 +10,7 @@
     "make": "npm run build && electron-forge make",
     "publish": "npm run build && electron-forge publish",
     "build": "tsc -p .",
+    "prebuild": "node copy-db.mjs",
     "lint": "eslint --ext .ts,.tsx ."
   },
   "devDependencies": {
@@ -22,6 +23,7 @@
     "@electron-forge/plugin-fuses": "^7.4.0",
     "@electron-forge/plugin-webpack": "^7.4.0",
     "@electron/fuses": "^1.8.0",
+    "@types/copy-webpack-plugin": "^10.1.0",
     "@types/figlet": "^1.5.8",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
@@ -29,16 +31,22 @@
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
     "@vercel/webpack-asset-relocator-loader": "1.7.3",
-    "css-loader": "^6.0.0",
+    "copy-webpack-plugin": "^12.0.2",
+    "css-loader": "^6.11.0",
     "electron": "31.1.0",
     "eslint": "^8.0.1",
     "eslint-plugin-import": "^2.25.0",
     "fork-ts-checker-webpack-plugin": "^7.2.13",
     "node-loader": "^2.0.0",
-    "style-loader": "^3.0.0",
+    "postcss-loader": "^8.1.1",
+    "style-loader": "^3.3.4",
+    "tailwindcss": "^3.4.4",
     "ts-loader": "^9.2.2",
     "ts-node": "^10.0.0",
-    "typescript": "~4.5.4"
+    "typescript": "~4.5.4",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4",
+    "webpack-merge": "^5.10.0"
   },
   "keywords": [],
   "author": {
@@ -53,12 +61,11 @@
     "electron-squirrel-startup": "^1.0.1",
     "figlet": "^1.7.0",
     "postcss": "^8.4.38",
-    "postcss-loader": "^8.1.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.24.0",
     "sqlite": "^5.1.1",
     "sqlite3": "^5.1.7",
-    "tailwindcss": "^3.4.4"
+    "winston": "^3.13.0"
   }
 }

@@ -96,3 +96,6 @@ out/
 
 #electron-build
 build
+
+#Dist
+dist
