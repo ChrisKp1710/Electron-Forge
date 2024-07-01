@@ -15,7 +15,7 @@ const config: ForgeConfig = {
   packagerConfig: {
     asar: true,
     extraResource: [
-      "dist/database.db", // Assicurati di avere il percorso corretto per il tuo database
+      "dist/database.db",
     ],
   },
   rebuildConfig: {},
