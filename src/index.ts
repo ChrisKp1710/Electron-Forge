@@ -1,9 +1,9 @@
 import { app, BrowserWindow, ipcMain } from "electron";
-import { initDb } from "./database/initDatabase"; // Assicurati di avere il percorso corretto per il tuo file initDatabase.ts
+import { initDb } from "./database/initDatabase"; // percorso corretto per il tuo file initDatabase.ts
 import { openDb } from "./database/database";
-import path from "path";
-import { format } from "url";
 import chalk from "chalk";
+//import path from "path";
+//import { format } from "url";
 
 declare const MAIN_WINDOW_WEBPACK_ENTRY: string;
 declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
