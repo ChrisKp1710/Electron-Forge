@@ -1,11 +1,3 @@
-/* // src/views/Auth/auth.tsx
-import React from "react";
-
-export const Auth: React.FC = () => {
-  return <h2>Auth Page</h2>;
-};
- */
-
 // src/views/Auth/auth.tsx
 import React from "react";
 import { Link } from "react-router-dom";
